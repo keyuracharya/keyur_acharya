@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keyur Acharya — Resume</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #2e7d32;
+      --green-light: #43a047;
+      --accent: #e8f5e9;
+      --text: #212121;
+      --muted: #616161;
+      --border: #c8e6c9;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #f5f5f5;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 900px;
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,.10);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--green);
+      color: #fff;
+      padding: 36px 40px 28px;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg, #a5d6a7, #fff3);
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    header .subtitle {
+      font-size: 1rem;
+      opacity: .88;
+      margin-bottom: 18px;
+      font-weight: 400;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: .88rem;
+    }
+    .contact-row a { color: #c8e6c9; }
+    .contact-row a:hover { color: #fff; }
+    .contact-item { display: flex; align-items: center; gap: 6px; }
+    .contact-item svg { flex-shrink: 0; }
+
+    /* ── Body ── */
+    .body { padding: 0 40px 40px; }
+
+    /* ── Sections ── */
+    section { margin-top: 32px; }
+    .section-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+    }
+
+    /* Summary */
+    .summary p { color: var(--muted); }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+    }
+    .skill-chip {
+      background: var(--accent);
+      border-left: 3px solid var(--green);
+      border-radius: 3px;
+      padding: 8px 12px;
+      font-size: .88rem;
+      color: var(--text);
+    }
+
+    /* Experience */
+    .job { margin-bottom: 28px; }
+    .job:last-child { margin-bottom: 0; }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+    .company { font-weight: 700; font-size: 1rem; }
+    .location { color: var(--muted); font-size: .85rem; }
+    .role-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .role { color: var(--green-light); font-style: italic; font-size: .92rem; }
+    .period {
+      font-size: .82rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .job ul { padding-left: 18px; }
+    .job li { margin-bottom: 4px; font-size: .93rem; color: #424242; }
+
+    /* Education */
+    .edu-item { margin-bottom: 20px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree { font-weight: 700; }
+    .edu-school { color: var(--green-light); font-style: italic; font-size: .92rem; }
+    .edu-year { font-size: .83rem; color: var(--muted); margin-bottom: 4px; }
+    .edu-desc { font-size: .9rem; color: var(--muted); }
+
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 8px;
+    }
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: .88rem;
+      gap: 10px;
+    }
+    .cert-name { flex: 1; }
+    .cert-date { color: var(--muted); white-space: nowrap; font-size: .82rem; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header { padding: 24px 20px 20px; }
+      header h1 { font-size: 1.8rem; }
+      .body { padding: 0 20px 28px; }
+      .job-header, .role-row { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Keyur Acharya</h1>
+    <p class="subtitle">Sr. Manager &amp; Firmware Lead &mdash; Power Electronics</p>
+    <div class="contact-row">
+      <span class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (+91) 9429244808
+      </span>
+      <span class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:keyuracharya11@gmail.com">keyuracharya11@gmail.com</a>
+      </span>
+      <span class="contact-item">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://www.linkedin.com/in/keyur-acharya-232b9180/" target="_blank" rel="noopener">linkedin.com/in/keyur-acharya-232b9180</a>
+      </span>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- SUMMARY -->
+    <section class="summary">
+      <div class="section-title">Professional Summary</div>
+      <p>Sr. Manager and Firmware Lead with <strong>13 years of experience</strong> specializing in Low Voltage and Medium Voltage power electronics (Solar, EV, Motor Drives). Proven leader in building and scaling engineering teams, driving process improvements (DevOps, HIL), and delivering high-impact products, including a <strong>filed patent</strong>. Expert in greenfield development, demonstrated by successfully leading projects such as a Solid State Transformer and solar inverter developed entirely from scratch.</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <div class="section-title">Professional Skills</div>
+      <div class="skills-grid">
+        <div class="skill-chip">Solar Inverter &amp; Motor Drive Control</div>
+        <div class="skill-chip">Onboard EV Charger (V2G, CHAdeMO)</div>
+        <div class="skill-chip">Solid State Transformer &amp; Active Harmonic Filter</div>
+        <div class="skill-chip">Embedded C &amp; FPGA Development</div>
+        <div class="skill-chip">Version Control — GIT, SVN</div>
+        <div class="skill-chip">Static Analysis — Lint, SonarQube</div>
+        <div class="skill-chip">Hardware in Loop — Typhoon, Plecs</div>
+        <div class="skill-chip">Agile / Scrum — Jira, GitHub Projects</div>
+        <div class="skill-chip">Requirements Management — IBM DOORS</div>
+        <div class="skill-chip">DevOps &amp; CI/CD Automation</div>
+        <div class="skill-chip">Debugging — JTAG</div>
+        <div class="skill-chip">ISO Project Management Procedures</div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <div class="section-title">Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="company">TMEIC (Toshiba Mitsubishi-Electric Industrial Corporation)</span>
+          <span class="location">Hyderabad</span>
+        </div>
+        <div class="role-row">
+          <span class="role">Sr. Manager Firmware</span>
+          <span class="period">Mar 2024 &ndash; Present</span>
+        </div>
+        <ul>
+          <li>Lead a team of 11 engineers (2 Controls Simulation + 2 HIL developers) to develop a 5 MW solar inverter and Modular UPS for datacenters.</li>
+          <li>Architected layered firmware and multiprocessor communication reusable across multiple products.</li>
+          <li>Filed a patent for an innovative PWM technique for ANPC topology.</li>
+          <li>Established standard firmware practices: version control, firmware review, HIL testing, static code analysis, and unit testing.</li>
+          <li>Developed automated firmware testing and automated code quality review using DevOps.</li>
+          <li>Collaborated with leading educational institutes to foster research partnerships.</li>
+          <li>Active involvement in grid compliance and certification requirements.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="company">VIPL (Virginia Transformer Group of Company)</span>
+          <span class="location">Vadodara</span>
+        </div>
+        <div class="role-row">
+          <span class="role">Lead Firmware Engineer</span>
+          <span class="period">Mar 2023 &ndash; Mar 2024</span>
+        </div>
+        <ul>
+          <li>Led a team of 5 firmware developers (1 PhD + 2 M.Tech + 2 B.Tech) to develop a Solid State Transformer from scratch.</li>
+          <li>Worked with product managers from the USA to understand and implement firmware features.</li>
+          <li>Product created a new business vertical; subsequently spun off as a new company — AK Power Solution LLC.</li>
+          <li>Fostered research partnerships with leading educational institutes.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="company">Fuji Electric India</span>
+          <span class="location">Pune</span>
+        </div>
+        <div class="role-row">
+          <span class="role">Manager Firmware</span>
+          <span class="period">Jun 2020 &ndash; Feb 2023</span>
+        </div>
+        <ul>
+          <li>Led team of 2 firmware developers and 1 FPGA developer for localization of Japan-made products for the Indian market.</li>
+          <li>Localized UPS and Solar Inverter firmware per customer and Central Electrical Authority (India) requirements.</li>
+          <li>Learned Model-Based Design and auto code generation tools used in Japan.</li>
+          <li>Launched products and conducted field trials; managed product certification at UL laboratory.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="company">Delta Electronics India</span>
+          <span class="location">Bengaluru</span>
+        </div>
+        <div class="role-row">
+          <span class="role">Asst. Manager Firmware</span>
+          <span class="period">Nov 2016 &ndash; May 2020</span>
+        </div>
+        <ul>
+          <li>Worked in the Advanced Research department for the Electric Vehicle business group.</li>
+          <li>Developed model-based design process and charger firmware architecture.</li>
+          <li>Developed 3-phase Onboard Charging Module (OBCM) at 100 kHz switching frequency for V2G (CHAdeMO).</li>
+          <li>Presented new ideas to global teams across Germany, USA, Taiwan, and Thailand.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="company">AmTech Electronics India</span>
+          <span class="location">Gandhinagar</span>
+        </div>
+        <div class="role-row">
+          <span class="role">Engineer Firmware</span>
+          <span class="period">May 2012 &ndash; Oct 2016</span>
+        </div>
+        <ul>
+          <li>Firmware development for Static Var Generator, 3-phase 4-wire Active Harmonic Filter, and Compact Soft Starter for 3-phase induction motor.</li>
+          <li>Documentation, verification, and validation per ISO 9001 quality control process.</li>
+          <li>Trained new channel partners for installation, commissioning, and maintenance of products.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <div class="section-title">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-degree">MBA in Business Management <span style="font-weight:400;font-size:.88rem;color:var(--green-light)">(In Progress)</span></div>
+        <div class="edu-school">SVKM's NMIMS University</div>
+        <div class="edu-year">2025 &ndash; Expected 2027</div>
+        <div class="edu-desc">Strengthening people management, leadership, and organizational skills to manage people, processes, and performance in a professional business environment.</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">B.E. Electronics and Communication</div>
+        <div class="edu-school">Gujarat Technological University</div>
+        <div class="edu-year">2008 &ndash; 2012</div>
+        <div class="edu-desc">Strong foundation in the principles and practices of electronics and low-level firmware development.</div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section>
+      <div class="section-title">Certifications</div>
+      <div class="cert-grid">
+        <div class="cert-item"><span class="cert-name">HIL Fundamentals by Typhoon HIL</span><span class="cert-date">Mar 2024</span></div>
+        <div class="cert-item"><span class="cert-name">Agile With Atlassian Jira</span><span class="cert-date">Dec 2023</span></div>
+        <div class="cert-item"><span class="cert-name">Version Control with Git</span><span class="cert-date">Jun 2021</span></div>
+        <div class="cert-item"><span class="cert-name">Responsive Web Design</span><span class="cert-date">Aug 2021</span></div>
+        <div class="cert-item"><span class="cert-name">DevOps Certification</span><span class="cert-date">Dec 2020</span></div>
+        <div class="cert-item"><span class="cert-name">Project Management Essential Certified</span><span class="cert-date">Dec 2020</span></div>
+        <div class="cert-item"><span class="cert-name">Scrum Fundamentals Certified</span><span class="cert-date">May 2020</span></div>
+        <div class="cert-item"><span class="cert-name">Six Sigma Yellow Belt</span><span class="cert-date">May 2020</span></div>
+        <div class="cert-item"><span class="cert-name">Six Sigma White Belt</span><span class="cert-date">May 2020</span></div>
+        <div class="cert-item"><span class="cert-name">Understanding of Automotive SPICE</span><span class="cert-date">Feb 2020</span></div>
+      </div>
+    </section>
+
+  </div><!-- /.body -->
+</div><!-- /.page -->
+</body>
+</html>
