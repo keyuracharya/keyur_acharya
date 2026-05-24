@@ -167,6 +167,52 @@
     .cert-name { flex: 1; }
     .cert-date { color: var(--muted); white-space: nowrap; font-size: .82rem; }
 
+    /* ── Org Chart ── */
+    .org { margin: 14px 0 10px; display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .org-row { display: flex; gap: 8px; justify-content: center; }
+    .org-node {
+      border: 1.5px solid #bdbdbd;
+      border-radius: 4px;
+      padding: 5px 14px;
+      font-size: .8rem;
+      background: #fff;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .org-node.highlight {
+      border-color: var(--green);
+      background: var(--accent);
+      color: var(--green);
+      font-weight: 600;
+    }
+    .org-connector {
+      width: 1.5px;
+      height: 18px;
+      background: #bdbdbd;
+      margin: 0 auto;
+    }
+    .org-h-line {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+    }
+    .org-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .org-branch-line {
+      width: 1.5px;
+      height: 18px;
+      background: #bdbdbd;
+    }
+    .org-top-bar {
+      height: 1.5px;
+      background: #bdbdbd;
+      align-self: stretch;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 600px) {
       header { padding: 24px 20px 20px; }
@@ -241,6 +287,26 @@
         </div>
         <ul>
           <li>Lead a team of 11 engineers (2 Controls Simulation + 2 HIL developers) to develop a 5 MW solar inverter and Modular UPS for datacenters.</li>
+        </ul>
+        <svg viewBox="0 0 500 132" width="100%" style="max-width:500px;display:block;margin:12px auto 8px;font-family:inherit;" aria-label="Org chart: AGM Product Development > Sr. Manager Firmware > Control Simulation, Firmware Development, Firmware Testing">
+          <rect x="150" y="8" width="200" height="28" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="250" y="27" text-anchor="middle" font-size="11.5" fill="#424242">AGM Product Development</text>
+          <line x1="250" y1="36" x2="250" y2="52" stroke="#bdbdbd" stroke-width="1.5"/>
+          <rect x="157" y="52" width="186" height="28" rx="4" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+          <text x="250" y="71" text-anchor="middle" font-size="11.5" fill="#2e7d32" font-weight="bold">Sr. Manager Firmware</text>
+          <line x1="250" y1="80" x2="250" y2="92" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="75" y1="92" x2="425" y2="92" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="75" y1="92" x2="75" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="250" y1="92" x2="250" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="425" y1="92" x2="425" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <rect x="10" y="104" width="130" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="75" y="120" text-anchor="middle" font-size="11" fill="#424242">Control Simulation</text>
+          <rect x="175" y="104" width="150" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="250" y="120" text-anchor="middle" font-size="11" fill="#424242">Firmware Development</text>
+          <rect x="360" y="104" width="130" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="425" y="120" text-anchor="middle" font-size="11" fill="#424242">Firmware Testing</text>
+        </svg>
+        <ul>
           <li>Architected layered firmware and multiprocessor communication reusable across multiple products.</li>
           <li>Filed a patent for an innovative PWM technique for ANPC topology.</li>
           <li>Established standard firmware practices: version control, firmware review, HIL testing, static code analysis, and unit testing.</li>
@@ -261,6 +327,26 @@
         </div>
         <ul>
           <li>Led a team of 5 firmware developers (1 PhD + 2 M.Tech + 2 B.Tech) to develop a Solid State Transformer from scratch.</li>
+        </ul>
+        <svg viewBox="0 0 500 132" width="100%" style="max-width:500px;display:block;margin:12px auto 8px;font-family:inherit;" aria-label="Org chart: GM R&amp;D > Firmware Lead > Control Simulation, Firmware Development, Firmware Testing">
+          <rect x="185" y="8" width="130" height="28" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="250" y="27" text-anchor="middle" font-size="11.5" fill="#424242">GM R&amp;D</text>
+          <line x1="250" y1="36" x2="250" y2="52" stroke="#bdbdbd" stroke-width="1.5"/>
+          <rect x="168" y="52" width="164" height="28" rx="4" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+          <text x="250" y="71" text-anchor="middle" font-size="11.5" fill="#2e7d32" font-weight="bold">Firmware Lead</text>
+          <line x1="250" y1="80" x2="250" y2="92" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="75" y1="92" x2="425" y2="92" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="75" y1="92" x2="75" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="250" y1="92" x2="250" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="425" y1="92" x2="425" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <rect x="10" y="104" width="130" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="75" y="120" text-anchor="middle" font-size="11" fill="#424242">Control Simulation</text>
+          <rect x="175" y="104" width="150" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="250" y="120" text-anchor="middle" font-size="11" fill="#424242">Firmware Development</text>
+          <rect x="360" y="104" width="130" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="425" y="120" text-anchor="middle" font-size="11" fill="#424242">Firmware Testing</text>
+        </svg>
+        <ul>
           <li>Worked with product managers from the USA to understand and implement firmware features.</li>
           <li>Product created a new business vertical; subsequently spun off as a new company — AK Power Solution LLC.</li>
           <li>Fostered research partnerships with leading educational institutes.</li>
@@ -278,6 +364,23 @@
         </div>
         <ul>
           <li>Led team of 2 firmware developers and 1 FPGA developer for localization of Japan-made products for the Indian market.</li>
+        </ul>
+        <svg viewBox="0 0 400 132" width="100%" style="max-width:400px;display:block;margin:12px auto 8px;font-family:inherit;" aria-label="Org chart: GM R&amp;D > Firmware Manager > HMI localization, Firmware localization">
+          <rect x="140" y="8" width="120" height="28" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="200" y="27" text-anchor="middle" font-size="11.5" fill="#424242">GM R&amp;D</text>
+          <line x1="200" y1="36" x2="200" y2="52" stroke="#bdbdbd" stroke-width="1.5"/>
+          <rect x="118" y="52" width="164" height="28" rx="4" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+          <text x="200" y="71" text-anchor="middle" font-size="11.5" fill="#2e7d32" font-weight="bold">Firmware Manager</text>
+          <line x1="200" y1="80" x2="200" y2="92" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="100" y1="92" x2="300" y2="92" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="100" y1="92" x2="100" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <line x1="300" y1="92" x2="300" y2="104" stroke="#bdbdbd" stroke-width="1.5"/>
+          <rect x="20" y="104" width="160" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="100" y="120" text-anchor="middle" font-size="11" fill="#424242">HMI localization</text>
+          <rect x="220" y="104" width="160" height="24" rx="4" fill="white" stroke="#bdbdbd" stroke-width="1.5"/>
+          <text x="300" y="120" text-anchor="middle" font-size="11" fill="#424242">Firmware localization</text>
+        </svg>
+        <ul>
           <li>Localized UPS and Solar Inverter firmware per customer and Central Electrical Authority (India) requirements.</li>
           <li>Learned Model-Based Design and auto code generation tools used in Japan.</li>
           <li>Launched products and conducted field trials; managed product certification at UL laboratory.</li>
